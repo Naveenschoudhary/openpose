@@ -98,12 +98,12 @@ if (WIN32)
 
   set(CMAKE_SHARED_LINKER_FLAGS_RELEASE "${CMAKE_SHARED_LINKER_FLAGS_RELEASE} /LTCG:incremental /OPT:REF /OPT:ICF")
 elseif (UNIX)
-  # Turn on C++11
-  add_definitions(-std=c++11)
+  # Turn on C++14
+  add_definitions(-std=c++14)
   set(CMAKE_CXX_FLAGS_RELEASE "-O3")
 elseif (APPLE)
-  # Turn on C++11
-  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+  # Turn on C++14
+  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14")
   set(CMAKE_CXX_FLAGS_RELEASE "-O3")
 endif (WIN32)
 
