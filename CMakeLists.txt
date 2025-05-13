@@ -107,6 +107,11 @@ elseif (APPLE)
   set(CMAKE_CXX_FLAGS_RELEASE "-O3")
 endif (WIN32)
 
+# Set CMAKE_CXX_STANDARD for better cross-platform compatibility
+set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+
 # C++ additional flags
 if (CMAKE_COMPILER_IS_GNUCXX)
   message(STATUS "GCC detected, adding compile flags")
@@ -866,7 +871,7 @@ if (NOT ${WITH_EIGEN} MATCHES "NONE")
 endif (NOT ${WITH_EIGEN} MATCHES "NONE")
 
 if (APPLE)
-  include_directories("/usr/local/opt/openblas/include")
+  include_directories("/opt/homebrew/opt/openblas/include")
 endif (APPLE)
 
 if (USE_MKL)
